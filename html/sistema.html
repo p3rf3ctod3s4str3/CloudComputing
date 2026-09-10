@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema | Cloud Computing</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="sistema">
+  <header class="encabezado">
+    <div>
+      <h1>Gestión de productos</h1>
+      <p>Ejemplo de almacenamiento local y en la nube.</p>
+    </div>
+    <a href="../index.html" class="volver">Volver</a>
+  </header>
+
+  <main class="contenedor">
+    <section class="panel">
+      <h2>LocalStorage</h2>
+      <p class="ayuda">Estos datos se guardan en este navegador.</p>
+
+      <form id="formLocal" class="formulario">
+        <input id="nombre" type="text" placeholder="Nombre del producto" required>
+        <input id="cantidad" type="number" min="1" placeholder="Cantidad" required>
+        <button type="submit">Guardar local</button>
+      </form>
+
+      <p id="mensajeLocal" class="mensaje"></p>
+
+      <div class="tabla-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaLocal"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="titulo-flex">
+        <div>
+          <h2>Firebase</h2>
+          <p class="ayuda">Datos almacenados en Cloud Firestore.</p>
+        </div>
+        <span id="estadoFirebase" class="estado pendiente">Sin configurar</span>
+      </div>
+
+      <form id="formFirebase" class="formulario">
+        <input id="fbNombre" type="text" placeholder="Nombre del producto" required>
+        <input id="fbCantidad" type="number" min="1" placeholder="Cantidad" required>
+        <button type="submit">Guardar en Firebase</button>
+      </form>
+
+      <p id="mensajeFirebase" class="mensaje"></p>
+
+      <div class="tabla-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaFirebase">
+            <tr><td colspan="3" class="vacio">Configura Firebase para usar esta sección.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script type="module" src="../js/firebase.js"></script>
+</body>
+</html>
 
